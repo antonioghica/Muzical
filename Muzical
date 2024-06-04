@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+ifstream f("muzical.in");
+ofstream g("muzical.out");
+int main()
+{
+  char s[256];
+  int n,suma=0,nr;
+  f>>n;
+  for(int i=0;i<n;i++)
+  {
+      f>>s;
+      if(strcmp("re",s)==0)
+        suma+=1;
+      if(strcmp("mi",s)==0)
+        suma+=2;
+        if(strcmp("fa",s)==0)
+            suma+=3;
+        if(strcmp("sol",s)==0)
+            suma+=4;
+        if(strcmp("la",s)==0)
+            suma+=5;
+        if(strcmp("si",s)==0)
+            suma+=6;
+        if(strcmp("do2",s)==0)
+            suma+=7;
+  }
+  nr=suma%8;
+  if(nr==0)
+    g<<"do1";
+  if(nr==1)
+    g<<"re";
+  if(nr==2)
+    g<<"mi";
+  if(nr==3)
+    g<<"fa";
+  if(nr==4)
+    g<<"sol";
+  if(nr==5)
+    g<<"la";
+  if(nr==6)
+    g<<"si";
+  if(nr==7)
+    g<<"do2";
+}
+
